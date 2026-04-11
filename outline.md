@@ -1,4 +1,56 @@
-# Interventional Generalisation
+# Notes
+
+This is going to be a reveal JS presentation with the title "interventional generalisation"
+The core idea being tools and ideas to answer the question:
+
+If I take action X instead of action Y will I get desired outcome Z.
+
+This needs to be answered under uncertainty and novelty.
+
+
+Work only in the outline.md file for now, we will convert this into slides later.
+
+Base ideas:
+
+Why systems? What is systematization?
+
+Systems crystalize judgement
+Uncertainty -> "it's about 20 something tomorrow" -> random variable over temprature
+Causality -> "If we want X we should Y" -> causality theory / causal graphs / structural causal models
+Decision -> "The best thing to do is X" -> decision theory, payoffs, interventional generalisation
+
+Systems move judements around, they let us make difficult compound judgements, rationally from easier and less controversial base judgements.
+
+Key ideas:
+
+The three step hierachy:
+
+1. Signal and noise (observational, where most statistics focuses, highly developed tools and methodology)
+2. Cause and effect (causal, work by Judea Pearl on causality theory and structural causal models in enconometrics/enconomics, moderately developed tools and methodology, still uncommon)
+3. Decide and act (utilitarian, make decisions under costs and benefits and uncertainty, few tools and no well known methodology, connections to game theory esp. imperfect information games)
+
+Separate causes of uncertainty:
+
+Uncertainty in parameters: this represents limits on our knowledge of how the system works
+Uncertainty from noise: this limits how much we can predict outcomes.
+
+Interveneability measures
+
+Given and outcome variable, measure the KL-divergence of the outcome distribution when no action is taken to distribution when action is taken.
+
+Will a causal model generlize to new sitiuations:
+
+1. known unknown: use Bayesian Hierachical models / random effects models.
+2. unknown unknowns: safety margins, heuristic biases: bias to inaction: be more than 90% sure your intervention will have a positive effect. Bias to action in winner take all scenarios: take an action if it increases the probability of getting the maximum utility.
+
+Address criticisms.
+
+
+
+N.B. Ideas are presented as towards a methodology to systematic decision making.
+
+
+# Interventional Generalisation (AI Slop)
 
 ## Framing question
 
