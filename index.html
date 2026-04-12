@@ -19,14 +19,92 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- Introduction -->
 				<section>
-					<h1>Interventional generalisation</h1>
-					<p>Tools and ideas for answering: if I take action <em>X</em> instead of <em>Y</em>, will I get outcome <em>Z</em>?</p>
+					<section>
+						<h1>Interventional Generalisation</h1>
+					</section>
+	
+					<section>
+						<div style="display: flex; justify-content: center;">
+							<p style="text-align: left;">
+								If I do <strong>X</strong> <em class="fragment">(intervention)</em><br>
+								instead of <strong>Y</strong> <em class="fragment">(counterfactual)</em><br>
+								will I improve outcome <strong>Z</strong>? <em class="fragment">(utility)</em><br>
+								<span class="fragment">…in new unseen situations. </span><em class="fragment">(generalization)</em>
+							</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- Primer on causality -->
+				<section>
+					<section>
+						<h2>Correlation always implies Causation</h2>
+						<p>
+							\[
+								\begin{align*}
+								\sigma(A, B) \neq 0 \implies & A \rightarrow \cdots \rightarrow B, \\
+								& A \leftarrow \cdots \leftarrow B, \\
+								& A \leftarrow \cdots \leftarrow C \rightarrow \cdots \rightarrow B
+								\end{align*}
+							\]
+						</p>
+					</section>
+
+					<section>
+						<h2>Conditioning does not imply Intervention</h2>
+						<p>
+							\( P(Y | X = x) \neq P(A | do(X = x)) \)
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Uncertainty all the way through</h2>
+				</section>
+
+				<section>
+					<h2>Bayesian Hierarchical Models</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is a system?</h2>
+					</section>
+					<section>
+						<h3>Systems crystallize judgement</h3>
+						<p class="fragment">
+							...by building coherent <em>derived</em> judgements<br>
+							from <em>base</em> judgements
+						</p>
+					</section>
+					<section>
+						<h3>What is a judgement?</h3>
+						<p>A <em>working, stylized</em> fact about the world.</p>
+					</section>
+					<section>
+						Systems are useful when:
+						<ul>
+							<li>The system can be practically applied</li>
+							<li>The base judgements are simple, clear and less controversial</li>
+						</ul>
+					</section>
+					<section>
+						<p>If you can make complex compound judgements directly, then you don't need a system.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Epistemic status: work in progress</h2>
+						<p class="fragment">I'm <em>very</em> interested in feedback and criticism!</p>
+					</section>
 				</section>
 
 				<section>
 					<h2>Framing question</h2>
-					<p><strong>Central question:</strong> If I take action <strong>X</strong> instead of action <strong>Y</strong>, will I obtain desired outcome <strong>Z</strong>?</p>
+					<p><strong>Central question:</strong> If I take action <strong>X</strong> instead of action <strong>Y</strong> will I obtain desired outcome <strong>Z</strong>?</p>
 					<ul>
 						<li>Under <strong>uncertainty</strong> — limited knowledge, stochastic outcomes</li>
 						<li>Under <strong>novelty</strong> — settings not seen before, distribution shift</li>
@@ -63,7 +141,7 @@
 						<tbody>
 							<tr>
 								<td><strong>Uncertainty</strong></td>
-								<td>“It’ll be about twenty-something tomorrow”</td>
+								<td>“It&apos;ll be about twenty-something tomorrow”</td>
 								<td>Random variables, distributions, calibration</td>
 							</tr>
 							<tr>
@@ -99,7 +177,7 @@
 					<section>
 						<h3>2. Cause and effect</h3>
 						<ul>
-							<li>Pearl et al.: graphs, do-calculus, SCMs; strong in <strong>econometrics / economics</strong></li>
+							<li>Pearl, Rubin, etc.: graphs, do-calculus, SCMs; strong in <strong>econometrics / economics</strong></li>
 							<li><strong>Moderately developed</strong>; still <strong>uncommon</strong> outside specialists</li>
 							<li>From “what tends to happen” to “what happens if we <strong>intervene</strong>”</li>
 						</ul>
@@ -189,15 +267,17 @@
 		<script src="dist/plugin/notes.js"></script>
 		<script src="dist/plugin/markdown.js"></script>
 		<script src="dist/plugin/highlight.js"></script>
+		<script src="dist/plugin/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
+			// - https://revealjs.com/math/
 			Reveal.initialize({
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
 			});
 		</script>
 	</body>

@@ -43,6 +43,28 @@ Will a causal model generlize to new sitiuations:
 1. known unknown: use Bayesian Hierachical models / random effects models.
 2. unknown unknowns: safety margins, heuristic biases: bias to inaction: be more than 90% sure your intervention will have a positive effect. Bias to action in winner take all scenarios: take an action if it increases the probability of getting the maximum utility.
 
+Annotated SCM:
+
+SCM where exogenous noise terms are annotated as being aleatoric or epistemic.
+
+Cost models:
+
+Associate a cost with the intervention and a benefit to the outcome variable.
+
+Expected counterfactual interventional value:
+Draw the aleatoric and epistemic noise variables, compute the outcome variable with and without the intervention,
+the final value for each draw is the difference between the value of the two outcomes minus the cost of intervention.
+
+Prior hypothetical interventional value:
+Draw the epistemic variables: compute the two expected benefit (outcome value - cost of intervention) over the aleatoric variables,
+keep the maxium. (e.g. you hypothetically act optimally after fixing the epistemic variables) 
+
+
+Main idea, if both these are low or negative then it is hard to get benefit from this intervention.
+If prior hypothetical interventional value is high but Expected counterfactual interventional value is low,
+then more information/experimentation is required to benefit from this intervention.
+If both are high then it makes sense to take the intervention without further research.
+
 Address criticisms.
 
 
