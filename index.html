@@ -32,52 +32,22 @@
 								If I do <strong>X</strong> <em class="fragment">(intervention)</em><br>
 								instead of <strong>Y</strong> <em class="fragment">(counterfactual)</em><br>
 								will I improve outcome <strong>Z</strong>? <em class="fragment">(utility)</em><br>
-								<span class="fragment">…in new unseen situations. </span><em class="fragment">(generalization)</em>
+								<span class="fragment">…in new unseen situations. </span><em class="fragment">(generalisation)</em>
 							</p>
 						</div>
 					</section>
-				</section>
-
-				<!-- Primer on causality -->
-				<section>
-					<section>
-						<h2>Correlation always implies Causation</h2>
-						<p>
-							\[
-								\begin{align*}
-								\sigma(A, B) \neq 0 \implies & A \rightarrow \cdots \rightarrow B, \\
-								& A \leftarrow \cdots \leftarrow B, \\
-								& A \leftarrow \cdots \leftarrow C \rightarrow \cdots \rightarrow B
-								\end{align*}
-							\]
-						</p>
-					</section>
 
 					<section>
-						<h2>Conditioning does not imply Intervention</h2>
-						<p>
-							\( P(Y | X = x) \neq P(A | do(X = x)) \)
-						</p>
-					</section>
-
-					<section>
-						<h2>foo</h2>
-						<figure id="causal-diagram-example"></figure>
+						<h2>Work in progress!</h2>
+						<p class="fragment">I'm <em>very</em> interested in feedback and criticism!</p>
 					</section>
 				</section>
 
 				<section>
-					<h2>Uncertainty all the way through</h2>
-				</section>
-
-				<section>
-					<h2>Bayesian Hierarchical Models</h2>
-				</section>
-
-				<section>
 					<section>
-						<h2>What is a system?</h2>
+						<h2>Why systematize?</h2>
 					</section>
+
 					<section>
 						<h3>Systems crystallize judgement</h3>
 						<p class="fragment">
@@ -85,187 +55,168 @@
 							from <em>base</em> judgements
 						</p>
 					</section>
+
 					<section>
 						<h3>What is a judgement?</h3>
 						<p>A <em>working, stylized</em> fact about the world.</p>
 					</section>
+
+					<section>
+						<p>If you can make complex compound judgements directly, then you don't need a system.</p>
+					</section>
+
 					<section>
 						Systems are useful when:
 						<ul>
 							<li>The system can be practically applied</li>
-							<li>The base judgements are simple, clear and less controversial</li>
+							<li>The base judgements are easy, clear and less controversial</li>
 						</ul>
 					</section>
+				</section>
+				
+				<section>
 					<section>
-						<p>If you can make complex compound judgements directly, then you don't need a system.</p>
+						<h2>Towards action</h2>
+						<table>
+							<tbody>
+								<tr>
+									<td>Signal and noise</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Cause and effect</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Decide and act</td>
+									<td>Vibes and MBAs</td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>Epistemic status: work in progress</h2>
-						<p class="fragment">I'm <em>very</em> interested in feedback and criticism!</p>
+						<h2>Towards a methodology</h2>
 					</section>
-				</section>
-
-				<section>
-					<h2>Framing question</h2>
-					<p><strong>Central question:</strong> If I take action <strong>X</strong> instead of action <strong>Y</strong> will I obtain desired outcome <strong>Z</strong>?</p>
-					<ul>
-						<li>Under <strong>uncertainty</strong> — limited knowledge, stochastic outcomes</li>
-						<li>Under <strong>novelty</strong> — settings not seen before, distribution shift</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Positioning</h2>
-					<ul>
-						<li>Toward a <strong>methodology for systematic decision making</strong> — a direction of travel, not a finished science</li>
-						<li>Make <strong>compound, difficult judgments</strong> traceable to <strong>simpler, less controversial base judgments</strong>, repeatably</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Why systems? What is systematisation?</h2>
-					<ul>
-						<li><strong>Systems</strong> crystallise judgment: explicit structure for what we believe, observe, and recommend</li>
-						<li><strong>Systematisation</strong> — names, relationships, and rules others can inspect, criticise, and extend</li>
-						<li>Systems <strong>move judgments around</strong>: difficult conclusions from easier premises; disagreement becomes visible</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Three conceptual lenses</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Lens</th>
-								<th>Typical phrasing</th>
-								<th>Rough formal home</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><strong>Uncertainty</strong></td>
-								<td>“It&apos;ll be about twenty-something tomorrow”</td>
-								<td>Random variables, distributions, calibration</td>
-							</tr>
-							<tr>
-								<td><strong>Causality</strong></td>
-								<td>“If we want X we should do Y”</td>
-								<td>Causal graphs, SCMs, identification</td>
-							</tr>
-							<tr>
-								<td><strong>Decision</strong></td>
-								<td>“The best thing to do is X”</td>
-								<td>Decision theory, payoffs, policies, interventional generalisation</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
 					<section>
-						<h2>Three-step hierarchy</h2>
 						<ol>
-							<li>Signal and noise (observational)</li>
-							<li>Cause and effect (causal / interventional)</li>
-							<li>Decide and act (utilitarian / prescriptive)</li>
+							<li>Create a causal model for your intervention</li>
+							<li>Annotate you model with aleatoric and epistemic sources of uncertainty</li>
+							<li>Build a Bayesian hierarchical model linking observations to epistemic uncertainty</li>
 						</ol>
 					</section>
+				</section>
+
+				<section>
 					<section>
-						<h3>1. Signal and noise</h3>
-						<ul>
-							<li>Where <strong>most of statistics</strong> lives: estimation, testing, prediction from data <em>as drawn</em></li>
-							<li><strong>Highly developed</strong> tools (design, inference, UQ for associations and forecasts)</li>
-						</ul>
+						<h2>Interveneability</h2>
+					</section>
+
+					<section>
+						<p>KL divergence of the outcome without intervention to the outcome with intervention.</p>
+					</section>
+
+					<section data-transition="fade">
+						<img src="images/outcome-overlap.svg" alt="Outcomes overlap" />
+						<p>
+							\[
+								D_{KL}\left[\, P(O | do(X = a)) \,||\, P(O | do(X = a_0)) \,\right]
+							\]
+						</p>
+					</section>
+
+					<section data-transition="fade">
+						<img src="images/outcome-separated.svg" alt="Outcomes separated" />
+						<p>
+							\[
+								D_{KL}\left[\, P(O | do(X = a)) \,||\, P(O | do(X = a_0)) \,\right]
+							\]
+						</p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Unknown unknowns</h2>
 					</section>
 					<section>
-						<h3>2. Cause and effect</h3>
-						<ul>
-							<li>Pearl, Rubin, etc.: graphs, do-calculus, SCMs; strong in <strong>econometrics / economics</strong></li>
-							<li><strong>Moderately developed</strong>; still <strong>uncommon</strong> outside specialists</li>
-							<li>From “what tends to happen” to “what happens if we <strong>intervene</strong>”</li>
-						</ul>
+						Add a safety margin
 					</section>
 					<section>
-						<h3>3. Decide and act</h3>
-						<ul>
-							<li>Actions under <strong>costs, benefits, uncertainty</strong> — not only what is true, but <strong>what to do</strong></li>
-							<li><strong>Few</strong> standard tools; <strong>no</strong> single widely accepted methodology vs classical stats</li>
-							<li>Links to <strong>game theory</strong>, especially <strong>imperfect information</strong></li>
-						</ul>
+						<img src="images/outcome-margin.svg" alt="Outcome margin" />
+					</section>
+					<section>
+						Require a high probability of a positive outcome
+					</section>
+					<section>
+						\[
+							P\left[ V > 0 \,|\, \text{do}(X = a) \right] > 0.9
+						\]
+					</section>
+					<section>
+						\[
+							P\left[ V > 0 \,|\, \text{do}(X = a) \right] > \tau
+						\]
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>Two sources of uncertainty</h2>
-						<p>Different responses in models and in process.</p>
+						<h2>Expected value of intervention</h2>
 					</section>
 					<section>
-						<h3>Parameters (epistemic / structural)</h3>
-						<ul>
-							<li>Limits on <strong>how well we know the system</strong>: form, coefficients, heterogeneity</li>
-							<li>Hierarchical structure, priors, model comparison, scope statements</li>
-						</ul>
+						\[
+							\mathbb{E}_{U_a, U_e} \left[ V | \text{do}(X = a) \right] - \mathbb{E}_{U_a, U_e} \left[ V | \text{do}(X = a_0) \right]
+						\]
 					</section>
 					<section>
-						<h3>Noise (aleatoric)</h3>
-						<ul>
-							<li>Limits <strong>predictability of outcomes</strong> even with a perfect mechanism model</li>
-							<li>Ceiling on predictability; shapes risk and measurement vs action</li>
-						</ul>
+						<h2>Value with perfect information</h2>
+					</section>
+					<section>
+						\[
+							\mathbb{E}_{U_e} \left[ \max_{a} \; \mathbb{E}_{U_a} \left[ V | \text{do}(X = a) \right] \right]
+						\]
+					</section>
+
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th colspan="2" rowspan="2"></th>
+									<th colspan="2" scope="colgroup">Value with perfect information</th>
+								</tr>
+								<tr>
+									<th scope="col">High</th>
+									<th scope="col">Low</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="2" scope="rowgroup">Expected value of intervention</th>
+									<th scope="row">High</th>
+									<td>Intervention indicated</td>
+									<td>N/A</td>
+								</tr>
+								<tr>
+									<th scope="row">Low</th>
+									<td>Learn more</td>
+									<td>Consider alternatives</td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 				</section>
 
 				<section>
-					<h2>Interveneability</h2>
-					<ul>
-						<li>Fix an <strong>outcome variable</strong></li>
-						<li>Compare its distribution: <strong>no intervention</strong> vs <strong>intervention</strong></li>
-						<li>One summary: <strong>KL divergence</strong> between those distributions (baseline, horizon, conditioning matter)</li>
-					</ul>
+				</section>
+				
+				<section>
+					<h2>Thank you!</h2>
 				</section>
 
-				<section>
-					<section>
-						<h2>Generalisation to new situations</h2>
-					</section>
-					<section>
-						<h3>Known unknowns</h3>
-						<ul>
-							<li><strong>Bayesian hierarchical</strong> models, <strong>random effects</strong>, <strong>partial pooling</strong></li>
-							<li>Encode what we expect to vary — even when not fully observed</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Unknown unknowns</h3>
-						<ul>
-							<li><strong>Safety margins</strong>, explicit conservatism</li>
-							<li><strong>Bias to inaction</strong> when downside dominates — require high confidence of net benefit</li>
-							<li><strong>Bias to action</strong> in winner-take-all / option-value settings — raise P(best outcome) when passivity loses</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<h2>Address criticisms</h2>
-					<ul>
-						<li><strong>False precision</strong> — when numbers are theatre; ordinal vs quantitative structure</li>
-						<li><strong>Ethics vs utilitarian framing</strong> — whose costs and benefits; non-compensatory values</li>
-						<li><strong>Identification vs ambition</strong> — what data can support</li>
-						<li><strong>Governance</strong> — ownership, audits, override</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Closing</h2>
-					<ul>
-						<li><strong>Interventional generalisation</strong> links causal <strong>do(·)</strong> to <strong>novel</strong> regimes — models and values must travel carefully</li>
-						<li>Systems are the <strong>scaffolding</strong>: inspectable, negotiable</li>
-					</ul>
-				</section>
 			</div>
 		</div>
 
