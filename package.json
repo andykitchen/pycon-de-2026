@@ -119,5 +119,8 @@
 		"@microsoft/api-extractor": {
 			"minimatch": "10.2.4"
 		}
+	},
+	"dependencies": {
+		"katex": "^0.16.45"
 	}
 }
