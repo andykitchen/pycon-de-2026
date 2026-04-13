@@ -1,0 +1,18 @@
+# Node #
+########
+node_modules
+
+# Cache #
+#########
+.cache
+coverage
+.eslintcache
+*.tsbuildinfo
+.flow_cache
+.cache
+
+# Artifacts #
+#############
+dist
+bundle
+docs
