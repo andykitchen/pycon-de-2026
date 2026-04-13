@@ -106,6 +106,7 @@
 		"glob": "^13.0.6",
 		"highlight.js": "^11.11.1",
 		"jszip": "^3.10.1",
+		"katex": "^0.16.45",
 		"marked": "^17.0.5",
 		"marked-smartypants": "^1.1.11",
 		"node-qunit-puppeteer": "^2.2.1",
@@ -119,8 +120,5 @@
 		"@microsoft/api-extractor": {
 			"minimatch": "10.2.4"
 		}
-	},
-	"dependencies": {
-		"katex": "^0.16.45"
 	}
 }
