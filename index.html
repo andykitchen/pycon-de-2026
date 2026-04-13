@@ -135,7 +135,6 @@
 							\]
 						</p>
 					</section>
-
 				</section>
 
 				<section>
@@ -143,23 +142,28 @@
 						<h2>Unknown unknowns</h2>
 					</section>
 					<section>
-						Add a safety margin
+						<h3>Safety margin</h3>
+						<p>Require a high probability of a positive outcome</p>
 					</section>
 					<section>
+						<h3>Causal regression to the mean</h3>
+						<p>Unknown confounders and mediators tend to redu ce the effect of the intervention</p>
+					</section>
+					<section data-transition="fade">
 						<img src="images/outcome-margin.svg" alt="Outcome margin" />
+						<p>
+							\[
+								P\left[ V > 0 \,|\, \text{do}(X = a) \right] > \tau
+							\]
+						</p>
 					</section>
-					<section>
-						Require a high probability of a positive outcome
-					</section>
-					<section>
-						\[
-							P\left[ V > 0 \,|\, \text{do}(X = a) \right] > 0.9
-						\]
-					</section>
-					<section>
-						\[
-							P\left[ V > 0 \,|\, \text{do}(X = a) \right] > \tau
-						\]
+					<section data-transition="fade">
+						<img src="images/outcome-margin-bad.svg" alt="Outcome margin" />
+						<p>
+							\[
+								P\left[ V > 0 \,|\, \text{do}(X = a) \right] > \tau
+							\]
+						</p>
 					</section>
 				</section>
 
