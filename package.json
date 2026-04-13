@@ -102,6 +102,8 @@
 		"presentation"
 	],
 	"devDependencies": {
+		"@types/d3": "^7.4.3",
+		"d3": "^7.9.0",
 		"fitty": "^2.4.2",
 		"glob": "^13.0.6",
 		"highlight.js": "^11.11.1",
@@ -114,7 +116,8 @@
 		"sass": "^1.98.0",
 		"typescript": "^6.0.2",
 		"vite": "^8.0.3",
-		"vite-plugin-dts": "^4.5.4"
+		"vite-plugin-dts": "^4.5.4",
+		"d3-dag": "file:lib/d3-dag"
 	},
 	"overrides": {
 		"@microsoft/api-extractor": {
