@@ -73,6 +73,102 @@
 						</ul>
 					</section>
 				</section>
+
+				<section>
+					<section>
+						<h2>Causality Primer</h2>
+					</section>
+					<section>
+						<h2>Correlation always implies Causation</h2>
+						<p>
+							\[
+								\begin{align*}
+								A &\rightarrow \cdots \rightarrow B \\
+								A &\leftarrow  \cdots \leftarrow B \\
+								A &\leftarrow  \cdots \leftarrow C \rightarrow \cdots \rightarrow B
+								\end{align*}
+							\]
+						</p>
+					</section>
+
+					<section>
+						<h2>Conditioning does not imply Intervention</h2>
+						<p>
+							\( P(Y | X = x) \neq P(A | do(X = x)) \)
+						</p>
+					</section>
+
+					<section>
+						<h2>Example</h2>
+						<figure id="causal-diagram-example"></figure>
+					</section>
+
+					<section>
+						<h3>Conditioning does not imply Intervention</h3>
+						<p>
+							\( P(\text{Cancer} | \text{White Teeth}) < P(\text{Cancer}) \)
+						</p>
+					</section>
+
+					<section>
+						<h2>Conditioning does not imply Intervention</h2>
+						<p>
+							\( P(\text{Cancer} | \text{do}(\text{Teeth} = \text{White})) = P(\text{Cancer}) \)
+						</p>
+					</section>
+
+					<section>
+						<figure id="causal-diagram-example-2"></figure>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>When validation sets fail</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Flavours of uncertainty</h2>
+					</section>
+					<section>
+						<h4>Flavours of uncertainty</h4>
+						<table>
+							<tr>
+								<td><strong>Epistemic</strong></td>
+								<td>lack of knowledge</td>
+							</tr>
+							<tr>
+								<td><strong>Aleatoric</strong></td>
+								<td>noise in the system</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h4>Aleatoric Uncertainty</h4>
+						<p>From the latin <em>alea</em> meaning dice</p>
+					</section>
+					<section>
+						<h4>Aleatoric</h4>
+						<ul>
+							<li>Limits prediction even when model parameters are known perfectly</li>
+							<li>Cannot be reduced by more measurement</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Epistemic</h4>
+						<p>From the greek <em>epistēmē</em> meaning knowledge</p>
+					</section>
+					<section>
+						<h4>Epistemic Uncertainty</h4>
+						<ul>
+							<li>In our heads</li>
+							<li>Can be reduced by more measurement</li>
+						</ul>
+					</section>
+				</section>
 				
 				<section>
 					<section>
@@ -81,15 +177,12 @@
 							<tbody>
 								<tr>
 									<td>Signal and noise</td>
-									<td></td>
 								</tr>
 								<tr>
 									<td>Cause and effect</td>
-									<td></td>
 								</tr>
 								<tr>
 									<td>Decide and act</td>
-									<td>Vibes and MBAs</td>
 								</tr>
 							</tbody>
 						</table>
@@ -122,7 +215,7 @@
 						<img src="images/outcome-overlap.svg" alt="Outcomes overlap" />
 						<p>
 							\[
-								D_{KL}\left[\, P(O | do(X = a)) \,||\, P(O | do(X = a_0)) \,\right]
+								D_{KL}\left[\, O(do(X = a)) \,||\, O \,\right]
 							\]
 						</p>
 					</section>
@@ -139,6 +232,53 @@
 
 				<section>
 					<section>
+						<h2>Expected value of intervention</h2>
+					</section>
+					<section>
+						\[
+							\mathbb{E}_{U_a, U_e} \left[ V | \text{do}(X = a) \right] - \mathbb{E}_{U_a, U_e} \left[ V \right]
+						\]
+					</section>
+					<section>
+						<h2>Expected value given perfect information</h2>
+					</section>
+					<section>
+						\[
+							\mathbb{E}_{U_e} \left[ \max_{a} \; \mathbb{E}_{U_a} \left[ V | \text{do}(X = a) \right] \right]
+						\]
+					</section>
+
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th colspan="2" rowspan="2"></th>
+									<th colspan="2" scope="colgroup">Expected value given perfect information</th>
+								</tr>
+								<tr>
+									<th scope="col">High</th>
+									<th scope="col">Low</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th rowspan="2" scope="rowgroup">Expected value of intervention</th>
+									<th scope="row">High</th>
+									<td>Intervention indicated</td>
+									<td>N/A</td>
+								</tr>
+								<tr>
+									<th scope="row">Low</th>
+									<td>More measurement</td>
+									<td>Consider alternatives</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<section>
 						<h2>Unknown unknowns</h2>
 					</section>
 					<section>
@@ -147,7 +287,7 @@
 					</section>
 					<section>
 						<h3>Causal regression to the mean</h3>
-						<p>Unknown confounders and mediators tend to redu ce the effect of the intervention</p>
+						<p>Unknown confounders and mediators tend to reduce the effect of an intervention</p>
 					</section>
 					<section data-transition="fade">
 						<img src="images/outcome-margin.svg" alt="Outcome margin" />
@@ -165,56 +305,6 @@
 							\]
 						</p>
 					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Expected value of intervention</h2>
-					</section>
-					<section>
-						\[
-							\mathbb{E}_{U_a, U_e} \left[ V | \text{do}(X = a) \right] - \mathbb{E}_{U_a, U_e} \left[ V | \text{do}(X = a_0) \right]
-						\]
-					</section>
-					<section>
-						<h2>Value with perfect information</h2>
-					</section>
-					<section>
-						\[
-							\mathbb{E}_{U_e} \left[ \max_{a} \; \mathbb{E}_{U_a} \left[ V | \text{do}(X = a) \right] \right]
-						\]
-					</section>
-
-					<section>
-						<table>
-							<thead>
-								<tr>
-									<th colspan="2" rowspan="2"></th>
-									<th colspan="2" scope="colgroup">Value with perfect information</th>
-								</tr>
-								<tr>
-									<th scope="col">High</th>
-									<th scope="col">Low</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th rowspan="2" scope="rowgroup">Expected value of intervention</th>
-									<th scope="row">High</th>
-									<td>Intervention indicated</td>
-									<td>N/A</td>
-								</tr>
-								<tr>
-									<th scope="row">Low</th>
-									<td>Learn more</td>
-									<td>Consider alternatives</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-				</section>
-
-				<section>
 				</section>
 				
 				<section>
