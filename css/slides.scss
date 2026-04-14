@@ -16,10 +16,41 @@ svg {
 			dominant-baseline: central;
 		}
 
+		&.fragment.conditioned,
+		&.fragment.intervened {
+			opacity: 1 !important;
+			visibility: visible !important;
+
+			rect {
+				transition: stroke 0.5s ease, stroke-width 0.5s ease;
+			}
+		}
+
+		&.fragment.conditioned.visible rect {
+			stroke: #ffb74d;
+			stroke-width: 2;
+		}
+
+		&.fragment.intervened.visible rect {
+			stroke: #fa8174;
+			stroke-width: 2;
+		}
 	}
 
 	.link {
 		stroke: white;
 		stroke-width: 1;
+		fill: none;
+
+		&.fragment.conditioned {
+			opacity: 1 !important;
+			visibility: visible !important;
+			transition: stroke 0.5s ease, stroke-width 0.5s ease;
+
+			&.visible {
+				stroke: #ffb74d;
+				stroke-width: 2;
+			}
+		}
 	}
 }
