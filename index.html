@@ -78,6 +78,7 @@
 					<section>
 						<h2>Causality Primer</h2>
 					</section>
+
 					<section>
 						<h2>Correlation always implies Causation</h2>
 						<p>
@@ -92,40 +93,93 @@
 					</section>
 
 					<section>
-						<h2>Conditioning does not imply Intervention</h2>
-						<p>
-							\( P(Y | X = x) \neq P(A | do(X = x)) \)
-						</p>
+						<h2>Conditioning is not Intervention</h2>
 					</section>
 
 					<section>
-						<h2>Example</h2>
+						<h3>Example</h3>
 						<figure id="causal-diagram-example"></figure>
 					</section>
 
 					<section>
-						<h3>Conditioning does not imply Intervention</h3>
+						<h3>Do notation is used to represent interventions</h3>
 						<p>
-							\( P(\text{Cancer} | \text{White Teeth}) < P(\text{Cancer}) \)
+							\( P(\text{Cancer} \,|\, \text{do}(\text{Teeth} = \text{White})) \)
 						</p>
 					</section>
 
 					<section>
-						<h2>Conditioning does not imply Intervention</h2>
-						<p>
-							\( P(\text{Cancer} | \text{do}(\text{Teeth} = \text{White})) = P(\text{Cancer}) \)
-						</p>
+						<h3>When we intervene on a variable <br> sever the incoming edges</h3>
 					</section>
 
 					<section>
 						<figure id="causal-diagram-example-do"></figure>
 					</section>
 
+					<section>
+						<h3>Conditioning is not Intervention</h3>
+						<p>
+							\( P(Y \,|\, X = x) \neq P(Y \,|\, do(X = x)) \)
+						</p>
+					</section>
+
+					<section>
+						A structural causal model (SCM) is a DAG where each node value is a function of its parents
+						and a exogenous noise term $U_i$
+
+						\[
+							X_i = f_i(X_{pa(i)}, U_i)
+						\]
+					</section>
+
+					<section>
+						<p>
+							Structural Causal Models are extensions of Bayesian Networks which capture causal relationships
+						</p>
+					</section>
+
+					<section>
+						Recommended reading:<br>Book of Why or Causality by Judea Pearl
+					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>When validation sets fail</h2>
+						<h2>When validation/tests sets fail</h2>
+					</section>
+					<section>
+						For interventions static observational data cannot be used to assess generalisation
+					</section>
+					<section>
+						We need to faithfully model as much of the data generating process as possible
+					</section>
+					<section>
+						Judgement also becomes much more important 
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Known unknowns</h2>
+					</section>
+					<section>
+						Bayesian hierarchical models capture variation at the group level
+					</section>
+					<section>
+						Also called random effects models
+					</section>
+					<section>
+						Key Idea: think of it as a generative process, first draw a country level effect, then draw a school level effect, then draw a student level effect, then a state level effect, etc.
+					</section>
+					<section>
+						<table>
+							<tr><td>Country Level Effect</td></tr>
+							<tr><td>State Level Effect</td></tr>
+							<tr><td>School Level Effect</td></tr>
+						</table>
+					</section>
+					<section>
+						Recommended reading: Bayesian Data Analysis by Andrew Gelman
 					</section>
 				</section>
 
@@ -186,19 +240,6 @@
 								</tr>
 							</tbody>
 						</table>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Towards a methodology</h2>
-					</section>
-					<section>
-						<ol>
-							<li>Create a causal model for your intervention</li>
-							<li>Annotate you model with aleatoric and epistemic sources of uncertainty</li>
-							<li>Build a Bayesian hierarchical model linking observations to epistemic uncertainty</li>
-						</ol>
 					</section>
 				</section>
 
@@ -307,6 +348,31 @@
 					</section>
 				</section>
 				
+				<section>
+					<section>
+						<h2>Towards a methodology</h2>
+					</section>
+					<section>
+						<ol>
+							<li>Create a causal model for your intervention</li>
+							<li>Build a Bayesian hierarchical model linking parameters to observations</li>
+							<li>Observe outcome distribution with/without intervention</li>
+							<li>Calculate interveneability</li>
+						</ol>
+					</section>
+					<section>
+						<ol>
+							<li>Add a cost model</li>
+							<li>Annotate you model with aleatoric and epistemic sources of uncertainty</li>
+							<li>Calculate the expected value of the intervention</li>
+							<li>Calculate the expected value of the intervention given perfect information</li>
+							<li>Use the information value gap to decide if further measurement is needed</li>
+							<li>Use domain knowledge to set safety margins</li>
+							<li>Act! 😅</li>
+						</ol>
+					</section>
+				</section>
+
 				<section>
 					<h2>Thank you!</h2>
 				</section>
