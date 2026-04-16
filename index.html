@@ -55,8 +55,9 @@
 					</section>
 
 					<section>
-						<h3>Challenges</h3>
+						<h3>Some Challenges</h3>
 						<ul>
+							<li>Tools and methodology less common</li>
 							<li>Normal test/validations sets don't work</li>
 							<li>Can't observe counterfactual outcomes</li>
 						</ul>
@@ -96,22 +97,27 @@
 
 					<section>
 						<h2>Conditioning is not Intervention</h2>
+						<p>
+							\( P(\text{Cancer} \,|\, \text{Teeth} = \text{White}) \)
+						</p>
 					</section>
 
 					<section>
-						<h3>Example</h3>
 						<figure id="causal-diagram-example"></figure>
 					</section>
 
 					<section>
-						<h3>Do notation is used to represent interventions</h3>
+						<h3>Do notation for interventions</h3>
 						<p>
 							\( P(\text{Cancer} \,|\, \text{do}(\text{Teeth} = \text{White})) \)
 						</p>
 					</section>
 
 					<section>
-						<h3>When we intervene on a variable <br> sever the incoming edges</h3>
+						<h4>
+							When we intervene on a variable<br>
+							cut the incoming edges
+						</h4>
 					</section>
 
 					<section>
@@ -121,17 +127,21 @@
 					<section>
 						<h3>Conditioning is not Intervention</h3>
 						<p>
-							\( P(Y \,|\, X = x) \neq P(Y \,|\, do(X = x)) \)
+							\( P(Y \,|\, X = x) \;\neq\; P(Y \,|\, do(X = x)) \)
 						</p>
 					</section>
 
 					<section>
-						A structural causal model (SCM) is a DAG where each node value is a function of its parents
-						and a exogenous noise term $U_i$
+						<p>
+							A structural causal model (SCM) is a DAG where each node value is a function of its parents
+							and a exogenous noise term $U_i$
+						</p>
 
-						\[
-							X_i = f_i(X_{pa(i)}, U_i)
-						\]
+						<equation>
+							\[
+								X_i = f_i(X_{pa(i)}, U_i)
+							\]
+						</equation>
 					</section>
 
 					<section>
@@ -165,7 +175,7 @@
 						</table>
 					</section>
 					<section>
-						<p>
+						<equation>
 							\[
 								\begin{align*}
 									\alpha_{c} &\sim \mathrm{Normal}(\mu, \tau_{\mathrm{country}}^2), \quad c = 1, \ldots, C \\
@@ -177,7 +187,7 @@
 				
 								\end{align*}
 							\]
-						</p>
+						</equation>
 					</section>
 					<section>
 						Recommended reading: Bayesian Data Analysis by Andrew Gelman
@@ -195,20 +205,20 @@
 
 					<section data-transition="fade">
 						<img src="images/outcome-overlap.svg" alt="Outcomes overlap" />
-						<p>
+						<equation>
 							\[
 								D_{KL}\left[\, O(do(X = a)) \,||\, O \,\right]
 							\]
-						</p>
+						</equation>
 					</section>
 
 					<section data-transition="fade">
 						<img src="images/outcome-separated.svg" alt="Outcomes separated" />
-						<p>
+						<equation>
 							\[
 								D_{KL}\left[\, O(do(X = a)) \,||\, O \,\right]
 							\]
-						</p>
+						</equation>
 					</section>
 				</section>
 
@@ -233,20 +243,20 @@
 
 					<section>
 						<h3>Expected value of intervention</h3>
-						<p>
+						<equation>
 							\[
 								\mathbb{E}_{U_a, U_e} \left[ V \,|\, \text{do}(X = a) \right] - \mathbb{E}_{U_a, U_e} \left[ V \right]
 							\]
-						</p>
+						</equation>
 					</section>
 
 					<section>
 						<h3>Expected value of intervention given perfect information</h3>
-						<p>
+						<equation>
 							\[
 								\mathbb{E}_{U_e} \left[ \max_{a} \; \mathbb{E}_{U_a} \left[ V \,|\, \text{do}(X = a) \right] \right]
 							\]
-						</p>
+						</equation>
 					</section>
 
 					<section>
@@ -292,19 +302,19 @@
 					</section>
 					<section data-transition="fade">
 						<img src="images/outcome-margin.svg" alt="Outcome margin" />
-						<p>
+						<equation>
 							\[
 								P\left[ V > 0 \,|\, \text{do}(X = a) \right] > \tau
 							\]
-						</p>
+						</equation>
 					</section>
 					<section data-transition="fade">
 						<img src="images/outcome-margin-bad.svg" alt="Outcome margin" />
-						<p>
+						<equation>
 							\[
-								P\left[ V > 0 \,|\, \text{do}(X = a) \right] < \tau
+								P\left[ V > 0 \,|\, \text{do}(X = a) \right] &lt; \tau
 							\]
-						</p>
+						</equation>
 					</section>
 				</section>
 				
