@@ -38,39 +38,41 @@
 					</section>
 
 					<section>
-						<h2>Work in progress!</h2>
-						<p class="fragment">I'm <em>very</em> interested in feedback and criticism!</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Why systematize?</h2>
-					</section>
-
-					<section>
-						<h3>Systems crystallize judgement</h3>
-						<p class="fragment">
-							...by building coherent <em>derived</em> judgements<br>
-							from <em>base</em> judgements
-						</p>
+						<h2>Towards action</h2>
+						<table>
+							<tbody>
+								<tr>
+									<td>Signal and noise</td>
+								</tr>
+								<tr>
+									<td>Cause and effect</td>
+								</tr>
+								<tr>
+									<td>Decide and act</td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 
 					<section>
-						<h3>What is a judgement?</h3>
-						<p>A <em>working, stylized</em> fact about the world.</p>
-					</section>
-
-					<section>
-						<p>If you can make complex compound judgements directly, then you don't need a system.</p>
-					</section>
-
-					<section>
-						Systems are useful when:
+						<h3>Challenges</h3>
 						<ul>
-							<li>The system can be practically applied</li>
-							<li>The base judgements are easy, clear and less controversial</li>
+							<li>Normal test/validations sets don't work</li>
+							<li>Can't observe counterfactual outcomes</li>
 						</ul>
+					</section>
+		
+					<section>
+						<h3>Systematization</h3>
+						<ul>
+							<li>Systems crystallize judgement</li>
+							<li>Intuition fails in complex situations</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Work in progress!</h2>
+						<p class="fragment">I'm <em>very</em> interested in feedback, criticism and collaboration</p>
 					</section>
 				</section>
 
@@ -145,31 +147,15 @@
 
 				<section>
 					<section>
-						<h2>When validation/tests sets fail</h2>
-					</section>
-					<section>
-						For interventions static observational data cannot be used to assess generalisation
-					</section>
-					<section>
-						We need to faithfully model as much of the data generating process as possible
-					</section>
-					<section>
-						Judgement also becomes much more important 
-					</section>
-				</section>
-
-				<section>
-					<section>
 						<h2>Known unknowns</h2>
 					</section>
 					<section>
-						Bayesian hierarchical models capture variation at the group level
+						<p>Bayesian hierarchical models capture variation at the group level</p>
+						<p class="fragment">Also called random effects models</p>
 					</section>
 					<section>
-						Also called random effects models
-					</section>
-					<section>
-						Key Idea: think of it as a generative process, first draw a country level effect, then draw a school level effect, then draw a student level effect, then a state level effect, etc.
+						<h4>Example</h4>
+						<p>Imagine a generative process, first draw a country level effect, then draw a school level effect, then draw a student level effect, then a state level effect, etc.</p>
 					</section>
 					<section>
 						<table>
@@ -179,73 +165,28 @@
 						</table>
 					</section>
 					<section>
+						<p>
+							\[
+								\begin{align*}
+									\alpha_{c} &\sim \mathrm{Normal}(\mu, \tau_{\mathrm{country}}^2), \quad c = 1, \ldots, C \\
+									\beta_{cs} &\sim \mathrm{Normal}(\alpha_{c}, \tau_{\mathrm{state}}^2), \quad s = 1, \ldots, S_c \\
+									\gamma_{cst} &\sim \mathrm{Normal}(\beta_{cs}, \tau_{\mathrm{school}}^2), \quad t = 1, \ldots, T_{cs} \\
+									\\
+				
+									y_{csti} &\sim \mathrm{Normal}(\gamma_{cst}, \sigma^2), \quad i = 1, \ldots, N_{cst} \\
+				
+								\end{align*}
+							\]
+						</p>
+					</section>
+					<section>
 						Recommended reading: Bayesian Data Analysis by Andrew Gelman
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Flavours of uncertainty</h2>
-					</section>
-					<section>
-						<h4>Flavours of uncertainty</h4>
-						<table>
-							<tr>
-								<td><strong>Epistemic</strong></td>
-								<td>lack of knowledge</td>
-							</tr>
-							<tr>
-								<td><strong>Aleatoric</strong></td>
-								<td>noise in the system</td>
-							</tr>
-						</table>
-					</section>
-					<section>
-						<h4>Aleatoric Uncertainty</h4>
-						<p>From the latin <em>alea</em> meaning dice</p>
-					</section>
-					<section>
-						<h4>Aleatoric</h4>
-						<ul>
-							<li>Limits prediction even when model parameters are known perfectly</li>
-							<li>Cannot be reduced by more measurement</li>
-						</ul>
-					</section>
-					<section>
-						<h4>Epistemic</h4>
-						<p>From the greek <em>epistēmē</em> meaning knowledge</p>
-					</section>
-					<section>
-						<h4>Epistemic Uncertainty</h4>
-						<ul>
-							<li>In our heads</li>
-							<li>Can be reduced by more measurement</li>
-						</ul>
 					</section>
 				</section>
 				
 				<section>
 					<section>
-						<h2>Towards action</h2>
-						<table>
-							<tbody>
-								<tr>
-									<td>Signal and noise</td>
-								</tr>
-								<tr>
-									<td>Cause and effect</td>
-								</tr>
-								<tr>
-									<td>Decide and act</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Interveneability</h2>
+						<h2>Intervention Detectability</h2>
 					</section>
 
 					<section>
@@ -265,7 +206,7 @@
 						<img src="images/outcome-separated.svg" alt="Outcomes separated" />
 						<p>
 							\[
-								D_{KL}\left[\, P(O | do(X = a)) \,||\, P(O | do(X = a_0)) \,\right]
+								D_{KL}\left[\, O(do(X = a)) \,||\, O \,\right]
 							\]
 						</p>
 					</section>
@@ -273,20 +214,39 @@
 
 				<section>
 					<section>
-						<h2>Expected value of intervention</h2>
+						<h2>Decision Theory</h2>
 					</section>
+
 					<section>
-						\[
-							\mathbb{E}_{U_a, U_e} \left[ V | \text{do}(X = a) \right] - \mathbb{E}_{U_a, U_e} \left[ V \right]
-						\]
+						<h3>Flavours of uncertainty</h3>
+						<table>
+							<tr>
+								<td><strong>Epistemic</strong></td>
+								<td>lack of knowledge</td>
+							</tr>
+							<tr>
+								<td><strong>Aleatoric</strong></td>
+								<td>noise in the system</td>
+							</tr>
+						</table>
 					</section>
+
 					<section>
-						<h2>Expected value given perfect information</h2>
+						<h3>Expected value of intervention</h3>
+						<p>
+							\[
+								\mathbb{E}_{U_a, U_e} \left[ V \,|\, \text{do}(X = a) \right] - \mathbb{E}_{U_a, U_e} \left[ V \right]
+							\]
+						</p>
 					</section>
+
 					<section>
-						\[
-							\mathbb{E}_{U_e} \left[ \max_{a} \; \mathbb{E}_{U_a} \left[ V | \text{do}(X = a) \right] \right]
-						\]
+						<h3>Expected value of intervention given perfect information</h3>
+						<p>
+							\[
+								\mathbb{E}_{U_e} \left[ \max_{a} \; \mathbb{E}_{U_a} \left[ V \,|\, \text{do}(X = a) \right] \right]
+							\]
+						</p>
 					</section>
 
 					<section>
@@ -342,7 +302,7 @@
 						<img src="images/outcome-margin-bad.svg" alt="Outcome margin" />
 						<p>
 							\[
-								P\left[ V > 0 \,|\, \text{do}(X = a) \right] > \tau
+								P\left[ V > 0 \,|\, \text{do}(X = a) \right] < \tau
 							\]
 						</p>
 					</section>
@@ -354,21 +314,20 @@
 					</section>
 					<section>
 						<ol>
-							<li>Create a causal model for your intervention</li>
-							<li>Build a Bayesian hierarchical model linking parameters to observations</li>
-							<li>Observe outcome distribution with/without intervention</li>
-							<li>Calculate interveneability</li>
+							<li>Write down a causal model for your intervention</li>
+							<li>Write down a Bayesian hierarchical model linking parameters to observations</li>
+							<li>Simulate outcome distribution with/without intervention</li>
+							<li>Calculate intervention detectability</li>
 						</ol>
 					</section>
 					<section>
-						<ol>
-							<li>Add a cost model</li>
-							<li>Annotate you model with aleatoric and epistemic sources of uncertainty</li>
+						<ol start="5">
+							<li>Write down a cost model</li>
+							<li>Identify aleatoric and epistemic sources of uncertainty</li>
 							<li>Calculate the expected value of the intervention</li>
 							<li>Calculate the expected value of the intervention given perfect information</li>
-							<li>Use the information value gap to decide if further measurement is needed</li>
+							<li>Use the gap to decide if more measurement is useful</li>
 							<li>Use domain knowledge to set safety margins</li>
-							<li>Act! 😅</li>
 						</ol>
 					</section>
 				</section>
